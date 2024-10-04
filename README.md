@@ -67,3 +67,4 @@ The following checks were performed on each of these signatures:
     \* Doing that, the app _giropops-senhas_ will be acle to reach the redis by the container name as the default value of _REDIS_HOST_ is **redis**.
 
 - If everything runs well you should by now, be able to access the giropops-senhas app: http://localhost:5000
+  .
