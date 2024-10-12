@@ -3,10 +3,12 @@ FROM cgr.dev/chainguard/python:latest-dev AS build
 WORKDIR /app
 
 RUN python -m venv venv
-ENV PATH="/app/venv/bin":$PATH
+ENV PATH="/app/venv/bin:$PATH"
 COPY giropops-senhas/requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
+# ignore warnings DL3007: bcs chainguard only offers the `latest` tag for free.
+# hadolint ignore=DL3007
 FROM cgr.dev/chainguard/python:latest
 
 WORKDIR /app
