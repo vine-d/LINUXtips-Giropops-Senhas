@@ -54,7 +54,14 @@ The following checks were performed on each of these signatures:
 - (_optional_) - using Trivy:
   `trivy image vined/linuxtips-giropops-senhas:2.0`
 
-### Running the app
+### Running the app (testing)
+
+> The quick way:
+>
+> - execute `docker-compose up -d`
+> - access on your Browser: `localhost:5000`
+
+(optional) How it works:
 
 - It's required a **redis** server to be acessible and its hostname to be set in the env _REDIS_HOST_ of the app container.
 
@@ -67,4 +74,7 @@ The following checks were performed on each of these signatures:
     \* Doing that, the app _giropops-senhas_ will be acle to reach the redis by the container name as the default value of _REDIS_HOST_ is **redis**.
 
 - If everything runs well you should by now, be able to access the giropops-senhas app: http://localhost:5000
-  .
+
+---
+
+> UPDATE: The image **_vined/linuxtips-giropops-senhas:2.2_** is a multi-platform build for `linux/amd64` and `linux/arm64`
